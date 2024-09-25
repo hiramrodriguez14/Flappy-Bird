@@ -20,6 +20,8 @@ public class FlappyBird extends JPanel implements ActionListener, KeyListener {
     int birdWidth = 34;
     int birdHeight = 24;
 
+    
+
     class Bird{
         int x = birdX;
         int y = birdY;
@@ -93,6 +95,7 @@ public class FlappyBird extends JPanel implements ActionListener, KeyListener {
             //game timer
             gameLoop = new Timer(1000/60, this);
             gameLoop.start();
+
         }
 
         public void placePipes(){
@@ -160,6 +163,8 @@ public class FlappyBird extends JPanel implements ActionListener, KeyListener {
                 if(!pipe.passed && bird.x > pipe.x + pipe.width){
                     pipe.passed = true;
                     score+=0.5;
+                    Toolkit.getDefaultToolkit().beep(); // Play a beep sound
+             
                 }
             }
 
@@ -182,7 +187,7 @@ public class FlappyBird extends JPanel implements ActionListener, KeyListener {
             if(gameOver){
                 placePipesTimer.stop();
                 gameLoop.stop();
-                pipes.clear();
+               
             }
             
         }
@@ -192,8 +197,20 @@ public class FlappyBird extends JPanel implements ActionListener, KeyListener {
         @Override
         public void keyPressed(KeyEvent e) {
            if(e.getKeyCode() == KeyEvent.VK_SPACE){ //jump if space bar is pressed
-                velocityY = -9;
+                velocityY = -13;
+
+                if(gameOver){
+                    //reset game
+                    pipes.clear();
+                    bird.y = birdY;
+                    velocityY = 0;
+                    score = 0;
+                    gameOver = false;
+                    gameLoop.start();
+                    placePipesTimer.start();
+                }
            }
+          
         }
 
         @Override
