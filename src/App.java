@@ -16,6 +16,9 @@ public class App {
         frame.add(flappybird);
         frame.pack();
         frame.setVisible(true);
+
+        
+
         
     }
 }
