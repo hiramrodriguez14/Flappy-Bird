@@ -1,18 +1,39 @@
-## Getting Started
+# Flappy Bird in Java
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+This is a simple clone of the original Flappy Bird game, built entirely in Java using basic libraries like Swing and AWT. The purpose of this project was to practice object-oriented programming, basic game physics, and rendering without relying on external game engines.
 
-## Folder Structure
+---
 
-The workspace contains two folders by default, where:
+## About the Game
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+Flappy Bird is a 2D arcade-style game where the player controls a bird trying to fly between rows of pipes without hitting them. The bird moves forward automatically and falls due to gravity. Pressing the spacebar makes the bird flap upwards. The goal is to pass through as many pipes as possible without colliding.
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+---
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+## How to Play
 
-## Dependency Management
+- Press the **spacebar** to make the bird flap upward.
+- If the bird hits a pipe or falls to the ground, the game ends.
+- Each time the bird successfully passes between pipes, your score increases by one.
+- Try to get the highest score possible.
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+---
+
+## Screenshot
+
+![Game Screenshot](<src/readme_image.png>)
+
+---
+
+## How to Run the Game
+
+## Download
+
+You can download the latest release from the [Releases section](https://github.com/<hiram.rodriguez14>/<Flappy-Bird>/releases).
+
+### Running the Game
+
+Make sure you have Java installed (JDK 8 or higher). Then, double-click the `.jar` file or run it from the terminal:
+
+```bash
+java -jar FlappyBird.jar
